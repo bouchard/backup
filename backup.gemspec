@@ -3,11 +3,11 @@
 require File.expand_path("lib/backup/version")
 
 Gem::Specification.new do |gem|
-  gem.name        = "backup"
+  gem.name        = "backup-bouchard"
   gem.version     = Backup::VERSION
   gem.authors     = "Michael van Rooijen"
   gem.email       = "meskyanichi@gmail.com"
-  gem.homepage    = "https://github.com/backup/backup"
+  gem.homepage    = "https://github.com/backup/backup-bouchard"
   gem.license     = "MIT"
   gem.summary     = "Provides an elegant DSL in Ruby for performing backups "\
     "on UNIX-like systems."
@@ -19,6 +19,9 @@ Gem::Specification.new do |gem|
     protocols/services, syncers, compressors, encryptors and notifiers which
     you can mix and match. It was built with modularity, extensibility and
     simplicity in mind.
+
+    This version has updated dependencies to be installable on Ruby 2.4.0
+    in which json 1.8.3 breaks. This is as of January 2017.
   EOS
 
   gem.files = `git ls-files -- lib bin templates README.md LICENSE`.split("\n")
@@ -27,25 +30,24 @@ Gem::Specification.new do |gem|
 
   gem.required_ruby_version = ">= 2.0"
 
-  gem.add_dependency "thor", "0.18.1"
-  gem.add_dependency "open4", "1.3.0"
-  gem.add_dependency "fog", "1.28.0"
-  gem.add_dependency "excon", "~> 0.44"
-  gem.add_dependency "unf", "0.1.3" # for fog/AWS
-  gem.add_dependency "dropbox-sdk", "1.6.5"
-  gem.add_dependency "net-ssh", "3.2.0"
-  gem.add_dependency "net-scp", "1.2.1"
-  gem.add_dependency "net-sftp", "2.1.2"
-  gem.add_dependency "mail", "2.6.3" # patched
-  gem.add_dependency "pagerduty", "2.0.0"
-  gem.add_dependency "twitter", "5.5.0"
-  gem.add_dependency "hipchat", "1.0.1"
-  gem.add_dependency "flowdock", "0.4.0"
-  gem.add_dependency "json", "1.8.2"
-  gem.add_dependency "dogapi", "1.11.0"
-  gem.add_dependency "aws-ses", "0.5.0"
-  gem.add_dependency "qiniu", "6.5.1"
-  gem.add_dependency "nokogiri", "~> 1.6.0"
+  gem.add_dependency "thor", ">= 0.18.1"
+  gem.add_dependency "open4", ">= 1.3.0"
+  gem.add_dependency "fog", ">= 1.28.0"
+  gem.add_dependency "excon", ">= 0.44"
+  gem.add_dependency "unf", ">= 0.1.3" # for fog/AWS
+  gem.add_dependency "dropbox-sdk", ">= 1.6.5"
+  gem.add_dependency "net-ssh", ">= 3.2.0"
+  gem.add_dependency "net-scp", ">= 1.2.1"
+  gem.add_dependency "net-sftp", ">= 2.1.2"
+  gem.add_dependency "mail", ">= 2.6.3" # patched
+  gem.add_dependency "pagerduty", ">= 2.0.0"
+  gem.add_dependency "twitter", ">= 5.5.0"
+  gem.add_dependency "hipchat", ">= 1.0.1"
+  gem.add_dependency "flowdock", ">= 0.4.0"
+  gem.add_dependency "json", ">= 2.0.2"
+  gem.add_dependency "dogapi", ">= 1.11.0"
+  gem.add_dependency "aws-ses", ">= 0.5.0"
+  gem.add_dependency "nokogiri", ">= 1.6.0"
 
   gem.add_development_dependency "rubocop", "0.45.0"
   gem.add_development_dependency "rake"
